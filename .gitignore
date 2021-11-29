@@ -30,5 +30,9 @@ hs_err_pid*
 .idea
 target
 *.iml
+config.env
+campinggearstore-firebase_key.json
+CampingGearStoreData.json
+CampingGearStoreDB.json
 out
 gen
