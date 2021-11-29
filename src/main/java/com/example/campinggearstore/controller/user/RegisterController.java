@@ -5,6 +5,7 @@ import com.example.campinggearstore.repository.IUserRepository;
 import com.example.campinggearstore.repository.impl.UserRepositoryImpl;
 import com.fasterxml.jackson.databind.ObjectMapper;
 
+import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -19,8 +20,8 @@ public class RegisterController extends HttpServlet {
 
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-
-
+        RequestDispatcher rd = req.getRequestDispatcher("/views/web/regisPage.jsp");
+        rd.forward(req, resp);
     }
 
     @Override

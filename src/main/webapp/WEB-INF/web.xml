@@ -6,6 +6,16 @@
     <listener>
         <listener-class>org.jboss.weld.environment.servlet.Listener</listener-class>
     </listener>
+    <filter>
+        <filter-name>sitemesh</filter-name>
+        <filter-class>com.opensymphony.sitemesh.webapp.SiteMeshFilter
+        </filter-class>
+    </filter>
+
+    <filter-mapping>
+        <filter-name>sitemesh</filter-name>
+        <url-pattern>/*</url-pattern>
+    </filter-mapping>
     <session-config>
         <tracking-mode>COOKIE</tracking-mode>
     </session-config>
@@ -25,13 +35,14 @@
 <!--        <location>/views/common/500.jsp</location>-->
 <!--    </error-page>-->
     <!-- CharsetFilter start -->
-    <filter>
-        <filter-name>CharacterSetFilter</filter-name>
-        <filter-class>com.example.campinggearstore.config.CharsetFilter</filter-class>
-    </filter>
 
-    <filter-mapping>
-        <filter-name>CharacterSetFilter</filter-name>
-        <url-pattern>/*</url-pattern>
-    </filter-mapping>
+<!--    <filter>-->
+<!--        <filter-name>CharacterSetFilter</filter-name>-->
+<!--        <filter-class>com.example.campinggearstore.config.CharsetFilter</filter-class>-->
+<!--    </filter>-->
+
+<!--    <filter-mapping>-->
+<!--        <filter-name>CharacterSetFilter</filter-name>-->
+<!--        <url-pattern>/*</url-pattern>-->
+<!--    </filter-mapping>-->
 </web-app>
