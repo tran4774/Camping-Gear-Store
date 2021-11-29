@@ -5,9 +5,10 @@ import dev.morphia.annotations.PrePersist;
 import dev.morphia.annotations.Version;
 import org.bson.types.ObjectId;
 
+import java.io.Serializable;
 import java.util.Date;
 
-public abstract class BaseEntity {
+public abstract class BaseEntity implements Serializable {
     @Id
     protected ObjectId id;
     protected Date creationDate;

@@ -33,5 +33,7 @@ public class RegisterController extends HttpServlet {
         } catch (Exception e) {
             objectMapper.writeValue(resp.getOutputStream(), e);
         }
+        req.setAttribute("user", user);
+        req.getRequestDispatcher("/index.jsp");
     }
 }

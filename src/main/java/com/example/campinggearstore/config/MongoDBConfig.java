@@ -7,9 +7,6 @@ import com.mongodb.ReadPreference;
 import com.mongodb.client.MongoClients;
 import dev.morphia.Datastore;
 import dev.morphia.Morphia;
-
-import javax.inject.Inject;
-import java.util.logging.Logger;
 public class MongoDBConfig {
 
 //    public static final String DB_HOST = "127.0.0.1";
@@ -27,8 +24,8 @@ public class MongoDBConfig {
                 .maxConnectionIdleTime(600000) // Keep idle connections for 10m, so we discard failed connections quickly
                 .readPreference(ReadPreference.primaryPreferred()) // Read from the primary, if not available use a secondary
                 .build();
-        MongoClient mongoClient = MongoClients.create();
-        datastore = Morphia.createDatastore(mongoClient, "testdb");
+        MongoClient mongoClient = MongoClients.create(System.getenv("MONGO_URI"));
+        datastore = Morphia.createDatastore(mongoClient, System.getenv("DBNAME"));
         datastore.getMapper().mapPackage(BaseEntity.class.getPackage().getName());
         datastore.ensureIndexes();
         datastore.ensureCaps();
