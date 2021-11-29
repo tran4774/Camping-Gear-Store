@@ -1,6 +1,9 @@
 package com.example.campinggearstore.controller.user;
 
 import javax.servlet.RequestDispatcher;
+import com.example.campinggearstore.entity.UserEntity;
+import com.google.firebase.auth.internal.GetAccountInfoResponse;
+
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -18,6 +21,8 @@ public class LoginController extends HttpServlet {
 
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-
+        UserEntity user = new UserEntity();
+        req.setAttribute("user", user);
+        req.getRequestDispatcher(req.getContextPath() + "/index.jsp");
     }
 }
