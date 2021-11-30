@@ -5,6 +5,7 @@ import com.example.campinggearstore.service.IStorageStrategy;
 import com.example.campinggearstore.service.Impl.FirebaseStorageStrategyImpl;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.databind.SerializationFeature;
+import org.springframework.beans.factory.annotation.Autowired;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -16,7 +17,8 @@ import java.io.IOException;
 @WebServlet(urlPatterns = {"/upload-image"})
 public class UploadFileController extends HttpServlet {
     final ObjectMapper objectMapper = new ObjectMapper();
-    IStorageStrategy storageStrategy = FirebaseStorageStrategyImpl.getInstance();
+    @Autowired
+    IStorageStrategy storageStrategy;
 
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {

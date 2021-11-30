@@ -34,7 +34,7 @@
     <div class="container">
         <div class="row">
             <%@ include file="/common/web/sidebar.jsp" %>
-            <dec:body/>
+            <sitemesh:write property='body'/>
         </div>
     </div>
 </div>

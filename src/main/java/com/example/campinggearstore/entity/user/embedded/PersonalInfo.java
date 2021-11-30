@@ -1,9 +1,9 @@
 package com.example.campinggearstore.entity.user.embedded;
 
-import dev.morphia.annotations.Entity;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+import org.springframework.data.mongodb.core.mapping.Document;
 
 import java.io.Serializable;
 import java.util.Date;
@@ -11,7 +11,6 @@ import java.util.Date;
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
-@Entity
 public class PersonalInfo implements Serializable {
     enum Sex {Mr, Mrs, Ms}
     private String firstName;
