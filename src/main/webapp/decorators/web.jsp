@@ -9,9 +9,13 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js" type="text/javascript"></script>
+    <script src="<c:url value="/templates/web/js/jquery.simplePagination.js" />" type="text/javascript"></script>
+
     <!-- Bootstrap style -->
     <link rel="stylesheet"  id="callCss" type="text/css" href="<c:url value='/templates/web/css/bootstrap.min.css'/>" media="screen" />
     <link rel="stylesheet"  type="text/css" href="<c:url value='/templates/web/css/base.css'/>" media="screen" />
+    <link rel="stylesheet"  type="text/css" href="<c:url value='/templates/web/css/simplePagination.css'/>" media="screen" />
     <!-- Bootstrap style responsive -->
     <link rel="stylesheet"  type="text/css" href="<c:url value='/templates/web/css/bootstrap-responsive.min.css'/>"  />
     <link rel="stylesheet"  type="text/css" href="<c:url value='/templates/web/css/font-awesome.css'/>">
@@ -41,7 +45,9 @@
 <%@ include file="/common/web/footer.jsp" %>
 
 
-<script src="<c:url value="/templates/web/js/jquery.js" />" type="text/javascript"></script>
+<%--<script src="<c:url value="/templates/web/js/jquery.js" />" type="text/javascript"></script>--%>
+
+<%--<script src="<c:url value="/templates/web/js/jquery.twbsPagination.min.js" />" type="text/javascript"></script>--%>
 <script src="<c:url value="/templates/web/js/bootstrap.min.js"/>" type="text/javascript"></script>
 <script src="<c:url value="/templates/web/js/google-code-prettify/prettify.js"/>"></script>
 <script src="<c:url value="/templates/web/js/bootshop.js"/>"></script>

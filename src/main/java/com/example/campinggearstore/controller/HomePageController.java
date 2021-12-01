@@ -21,12 +21,9 @@ public class HomePageController extends HttpServlet {
     IProductService productService;
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        List<ProductEntity> listProducts = new ArrayList<ProductEntity>();
-        listProducts = productService.getAllProducts();
-        req.setAttribute("listProducts", listProducts);
-
-        List<CategoryEntity> listCategories = new ArrayList<CategoryEntity>();
-        req.setAttribute("listCategories", listCategories);
+        Integer productsNumber = productService.countAllProducts();
+        req.setAttribute("productsNumber", productsNumber);
+        req.setAttribute("itemsOnPage", 6);
         RequestDispatcher rd = req.getRequestDispatcher("/views/web/homepage.jsp");
         rd.forward(req, resp);
     }

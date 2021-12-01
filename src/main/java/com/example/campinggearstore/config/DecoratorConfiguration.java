@@ -33,6 +33,7 @@ public class DecoratorConfiguration extends WebMvcConfigurerAdapter {
         Filter siteMeshFilter = new SiteMeshFilterBuilder()
             .addDecoratorPath("/*", "/decorators/web.jsp")
             .addDecoratorPath("/admin*", "/decorators/admin.jsp")
+            .addExcludedPath("/api*")
             .setIncludeErrorPages(true)
             .create();
         filter.setFilter(siteMeshFilter);
